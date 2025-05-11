@@ -20,4 +20,6 @@ When the answer is completely guessed correctly, show a message stating the play
     - Clear the hangman
     - Reset tries and the new letters
 
-    
+# Hangman Wireframe
+
+![Wireframe of the Hangman Game](./hangman-wireframe.png)
