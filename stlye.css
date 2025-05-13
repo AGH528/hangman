@@ -1,0 +1,88 @@
+body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .container {
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .word-display {
+    font-size: 2rem;
+    letter-spacing: 10px;
+    margin: 20px 0;
+    font-weight: bold;
+  }
+  
+  .hangman-graphic {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #444;
+  }
+  
+  .letter-buttons {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin: 20px 0;
+  }
+  
+  .letter-btn {
+    font-size: 1rem;
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .letter-btn:hover:enabled {
+    background-color: #ddd;
+  }
+  
+  .letter-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  #hint-btn, #reset-btn {
+    margin: 10px 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .hint-text {
+    margin-top: 5px;
+    color: #666;
+    font-style: italic;
+  }
+  
+  .status-text {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+  }
+  
+  .instructions {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 20px;
+  }
+  
