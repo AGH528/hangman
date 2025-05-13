@@ -1,16 +1,17 @@
 /*-------------------------------- Constants --------------------------------*/
 const words = [
-    { word: 'Maryland', hint: 'It is known for crab cakes.' },
-    { word: 'Florida', hint: 'It is home to the Everglades.' },
-    { word: 'District of Columbia', hint: 'The capital of the United States of America.' },
-    { word: 'Colorado', hint: 'What is the centennial state?' },
-    { word: 'Nebraska', hint: 'Football team is the Cornhuskers.' }
+    { word: 'Maryland', hint: 'It is known for crab cakes.', category: 'States' },
+    { word: 'Florida', hint: 'It is home to the Everglades.', category: 'States' },
+    { word: 'District of Columbia', hint: 'The capital of the United States of America.', category: 'Capitals' },
+    { word: 'Colorado', hint: 'What is the centennial state?', category: 'States' },
+    { word: 'Nebraska', hint: 'Football team is the Cornhuskers.', category: 'States' }
   ];
   const maxTries = 6;
   
   /*---------------------------- Variables (state) ----------------------------*/
   let selectedWord = '';
   let hint = '';
+  let category = '';
   let guessedLetters = [];
   let triesLeft = maxTries;
   let displayWord = [];
@@ -21,12 +22,12 @@ const words = [
   const messageEl = document.querySelector('#message');
   const hintBtnEl = document.querySelector('#hint-btn');
   const hintTextEl = document.querySelector('#hint-text');
-  const letterBtns = document.querySelectorAll('.letter-btn');
+  const letterBtnsContainer = document.querySelector('#letter-buttons');
   const hangmanGraphicEl = document.querySelector('#hangman-graphic');
   const resetBtnEl = document.querySelector('#reset-btn');
+  const categoryEl = document.querySelector('#category');
   
   /*----------------------------- Event Listeners -----------------------------*/
-  letterBtns.forEach(btn => btn.addEventListener('click', handleGuess));
   hintBtnEl.addEventListener('click', showHint);
   resetBtnEl.addEventListener('click', init);
   
@@ -35,16 +36,36 @@ const words = [
     const random = words[Math.floor(Math.random() * words.length)];
     selectedWord = random.word.toUpperCase();
     hint = random.hint;
+    category = random.category;
     guessedLetters = [];
     triesLeft = maxTries;
     displayWord = selectedWord.split('').map(char => (char === ' ' ? ' ' : '_'));
     gameOver = false;
     hintTextEl.textContent = '';
     messageEl.textContent = '';
+    categoryEl.textContent = `Category: ${category}`;
+    renderKeyboard();
     updateDisplay();
     updateHangman();
-    letterBtns.forEach(btn => {
-      btn.disabled = false;
+  }
+  
+  function renderKeyboard() {
+    const layout = [
+      'QWERTYUIOP',
+      'ASDFGHJKL',
+      'ZXCVBNM'
+    ];
+    letterBtnsContainer.innerHTML = '';
+    layout.forEach(row => {
+      const rowDiv = document.createElement('div');
+      row.split('').forEach(letter => {
+        const btn = document.createElement('button');
+        btn.textContent = letter;
+        btn.classList.add('letter-btn');
+        btn.addEventListener('click', handleGuess);
+        rowDiv.appendChild(btn);
+      });
+      letterBtnsContainer.appendChild(rowDiv);
     });
   }
   
