@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@600&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #190A05, #870000);
+  background-attachment: fixed;
+  background-size: cover;
+  color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 700px;
+  width: 90%;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 0 25px #ff0055;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Tagesschrift', cursive;
+  font-size: 2rem;
+  color: #ff0;
+  margin-bottom: 20px;
+}
+
+.category {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ff0;
+  font-size: 1.1rem;
+}
+
+.status-text {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #fefefe;
+}
+
+.word-display {
+  font-size: 2.2rem;
+  letter-spacing: 10px;
+  margin-bottom: 25px;
+  color: #ff0;
+}
+
+.hangman-graphic img {
+  border: 3px dashed #ff0;
+  border-radius: 6px;
+  padding: 5px;
+  background: #111;
+}
+
+.letter-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.letter-buttons div {
+  display: flex;
+  gap: 5px;
+}
+
+.letter-btn {
+  font-family: 'Tagesschrift', cursive;
+  font-size: 0.7rem;
+  padding: 8px;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #555;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.letter-btn:hover:enabled {
+  background-color: #ff0055;
+}
+
+.letter-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+button#hint-btn,
+button#reset-btn {
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px 20px;
+  margin: 10px 5px;
+  font-size: 1rem;
+  background-color: #ff0;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button#hint-btn:hover,
+button#reset-btn:hover {
+  background-color: #00c2cc;
+}
+
+.hint-text {
+  font-style: italic;
+  color: #ffda6f;
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+.instructions {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-top: 20px;
+}

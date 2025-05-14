@@ -4,54 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hangman Game</title>
-  <link rel="stylesheet" href="./css/style.css" />
-  <script defer src="./js/app.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tagesschrift&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css" />
+  <script defer src="./app.js"></script>
 </head>
 <body>
   <main class="container">
-    <h1>Hangman</h1>
+    <h1>HANGMAN</h1>
+    <p id="category" class="category"></p>
     <p id="message" class="status-text">Guess the word!</p>
-
     <div id="word-display" class="word-display">_ _ _ _ _</div>
-
-    <div id="hangman-graphic" class="hangman-graphic">Tries left: 6</div>
-
-    <section class="letter-buttons">
-      <button class="letter-btn">A</button>
-      <button class="letter-btn">B</button>
-      <button class="letter-btn">C</button>
-      <button class="letter-btn">D</button>
-      <button class="letter-btn">E</button>
-      <button class="letter-btn">F</button>
-      <button class="letter-btn">G</button>
-      <button class="letter-btn">H</button>
-      <button class="letter-btn">I</button>
-      <button class="letter-btn">J</button>
-      <button class="letter-btn">K</button>
-      <button class="letter-btn">L</button>
-      <button class="letter-btn">M</button>
-      <button class="letter-btn">N</button>
-      <button class="letter-btn">O</button>
-      <button class="letter-btn">P</button>
-      <button class="letter-btn">Q</button>
-      <button class="letter-btn">R</button>
-      <button class="letter-btn">S</button>
-      <button class="letter-btn">T</button>
-      <button class="letter-btn">U</button>
-      <button class="letter-btn">V</button>
-      <button class="letter-btn">W</button>
-      <button class="letter-btn">X</button>
-      <button class="letter-btn">Y</button>
-      <button class="letter-btn">Z</button>
-    </section>
-
+    <div class="hangman-graphic">
+      <img id="hangman-img" src="./images/hangman-0.png" alt="Hangman stage" width="200" />
+    </div>
+    <section id="letter-buttons" class="letter-buttons"></section>
     <button id="hint-btn">Show Hint</button>
     <p id="hint-text" class="hint-text" aria-live="polite"></p>
-
     <button id="reset-btn">Reset Game</button>
-
     <footer>
-      <p class="instructions">Guess the word by clicking letters. You lose a try for each wrong guess!</p>
+      <p class="instructions">
+        CLICK LETTERS TO GUESS WORD! <br>
+        EACH WRONG LETTER GUESSED, YOU LOSE A TRY. 
+      </p>
     </footer>
   </main>
 </body>

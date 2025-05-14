@@ -1,10 +1,10 @@
 /*-------------------------------- Constants --------------------------------*/
 const words = [
-    { word: 'Maryland', hint: 'It is known for crab cakes.', category: 'States' },
-    { word: 'Florida', hint: 'It is home to the Everglades.', category: 'States' },
-    { word: 'District of Columbia', hint: 'The capital of the United States of America.', category: 'Capitals' },
-    { word: 'Colorado', hint: 'What is the centennial state?', category: 'States' },
-    { word: 'Nebraska', hint: 'Football team is the Cornhuskers.', category: 'States' }
+    { word: 'Maryland', hint: 'It is known for crab cakes.', category: 'U.S. STATES' },
+    { word: 'Florida', hint: 'It is home to the Everglades.', category: 'U.S. STATES' },
+    { word: 'District of Columbia', hint: 'The capital of the United States of America.', category: 'U.S. STATES' },
+    { word: 'Colorado', hint: 'What is the centennial state?', category: 'U.S. STATES' },
+    { word: 'Nebraska', hint: 'Football team is the Cornhuskers.', category: 'U.S. STATES' }
   ];
   const maxTries = 6;
   
@@ -23,7 +23,7 @@ const words = [
   const hintBtnEl = document.querySelector('#hint-btn');
   const hintTextEl = document.querySelector('#hint-text');
   const letterBtnsContainer = document.querySelector('#letter-buttons');
-  const hangmanGraphicEl = document.querySelector('#hangman-graphic');
+  const hangmanGraphicEl = document.querySelector('#hangman-img');
   const resetBtnEl = document.querySelector('#reset-btn');
   const categoryEl = document.querySelector('#category');
   
@@ -109,9 +109,8 @@ const words = [
   }
   
   function updateHangman() {
-    hangmanGraphicEl.textContent = `Tries left: ${triesLeft}`;
+    hangmanGraphicEl.src = `./images/hangman-${maxTries - triesLeft}.png`;
+    hangmanGraphicEl.alt = `Hangman stage ${maxTries - triesLeft}`;
   }
   
-  // Initialize game on load
-  init();
-  
+  document.addEventListener('DOMContentLoaded', init);
